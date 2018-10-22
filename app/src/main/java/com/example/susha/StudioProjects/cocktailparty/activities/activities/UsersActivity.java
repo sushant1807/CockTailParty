@@ -4,29 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 
-import android.util.EventLog;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.susha.StudioProjects.cocktailparty.R;
-import com.example.susha.StudioProjects.cocktailparty.activities.helper.MoviesAdapter;
+import com.example.susha.StudioProjects.cocktailparty.activities.helper.EventsAdapter;
 import com.example.susha.StudioProjects.cocktailparty.activities.model.Event;
 import com.example.susha.StudioProjects.cocktailparty.activities.model.Movie;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,7 +34,7 @@ public class UsersActivity extends AppCompatActivity {
 
     private List<Movie> movieList = new ArrayList<>();
     private RecyclerView recycle;
-    private MoviesAdapter mAdapter;
+    private EventsAdapter mAdapter;
     FirebaseDatabase database;
     DatabaseReference myRef ;
     List<Event> list;
@@ -72,8 +64,8 @@ public class UsersActivity extends AppCompatActivity {
                     for (DataSnapshot dataSnapshot4 : dataSnapshot3.getChildren()) {
                         for (DataSnapshot dataSnapshot2 : dataSnapshot4.getChildren()) {
 
-                        Log.d("bharath11--", dataSnapshot2.toString());
-                        Log.d("bharath11--", dataSnapshot2.getKey().toString());
+                        Log.d("UsersActivity", dataSnapshot2.toString());
+                        Log.d("UsersActivity", dataSnapshot2.getKey().toString());
                         Event value = dataSnapshot2.getValue(Event.class);
                         Event fire = new Event();
                         String name = value.getTitle();
@@ -104,7 +96,7 @@ public class UsersActivity extends AppCompatActivity {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
         /*recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        mAdapter = new MoviesAdapter();
+        mAdapter = new EventsAdapter();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -118,7 +110,7 @@ public class UsersActivity extends AppCompatActivity {
     }
 
     private void showPosts(List<Event> list) {
-        MoviesAdapter recyclerAdapter = new MoviesAdapter(list,UsersActivity.this);
+        EventsAdapter recyclerAdapter = new EventsAdapter(list,UsersActivity.this);
         //RecyclerView.LayoutManager recycle = new GridLayoutManager(ItemObject.this,2);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(UsersActivity.this);
         recycle.setLayoutManager(mLayoutManager);

@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by Ravi Tamada on 18/05/16.
  */
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder> {
+public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<Event> albumList;
@@ -29,7 +29,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     Context context;
 
 
-    public MoviesAdapter(List<Event> list, Context context) {
+    public EventsAdapter(List<Event> list, Context context) {
         this.list = list;
         this.mContext = context;
     }

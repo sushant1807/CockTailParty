@@ -136,7 +136,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 Toast.makeText(RegisterActivity.this, "Authentication failed." + task.getException(),
                                         Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(RegisterActivity.this, LoginActivity1.class));
+                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                 finish();
                             }
                         }

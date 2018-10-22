@@ -1,18 +1,9 @@
 package com.example.susha.StudioProjects.cocktailparty.activities.services;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.susha.StudioProjects.cocktailparty.activities.activities.LoginActivity1;
-import com.example.susha.StudioProjects.cocktailparty.activities.activities.UsersActivity;
-
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -23,10 +14,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
-
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 
 public class HttpServices extends AsyncTask<String, String, String>
 {
@@ -71,7 +58,7 @@ public class HttpServices extends AsyncTask<String, String, String>
 
             // Enter URL address where your php file resides
             url = new URL("http://192.168.0.27/android_login_api/login.php/");
-            Log.d("bharath","connected");
+            Log.d("HttpServices","connected");
 
         } catch (MalformedURLException e) {
             // TODO Auto-generated catch block
@@ -116,7 +103,7 @@ public class HttpServices extends AsyncTask<String, String, String>
         try {
 
             int response_code = conn.getResponseCode();
-            Log.d("bharath1",""+response_code);
+            Log.d("HttpServices",""+response_code);
 
             // Check if successful connection made
             if (response_code == HttpURLConnection.HTTP_OK) {

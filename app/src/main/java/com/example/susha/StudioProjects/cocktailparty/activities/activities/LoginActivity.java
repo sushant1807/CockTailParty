@@ -5,7 +5,6 @@
  */
 package com.example.susha.StudioProjects.cocktailparty.activities.activities;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,31 +16,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request.Method;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.example.susha.StudioProjects.cocktailparty.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import helper.SQLiteHandler;
 import helper.SessionManager;
 
-import app.AppConfig;
-import app.AppController;
-import helper.SQLiteHandler;
-import helper.SessionManager;
-
-public class LoginActivity1 extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnLogin;
     private Button btnLinkToRegister;
@@ -55,7 +39,7 @@ public class LoginActivity1 extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login1);
+        setContentView(R.layout.activity_login);
 
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
@@ -75,7 +59,7 @@ public class LoginActivity1 extends AppCompatActivity {
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(LoginActivity1.this, UsersActivity.class);
+            Intent intent = new Intent(LoginActivity.this, UsersActivity.class);
             startActivity(intent);
             finish();
         }
@@ -123,7 +107,7 @@ public class LoginActivity1 extends AppCompatActivity {
         String email1=email;
         String password1=password;
         auth.signInWithEmailAndPassword(email1, password1)
-                .addOnCompleteListener(LoginActivity1.this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         // If sign in fails, display a message to the user. If sign in succeeds
@@ -131,13 +115,13 @@ public class LoginActivity1 extends AppCompatActivity {
                         // signed in user can be handled in the listener.
                        // progressBar.setVisibility(View.GONE);
                         if (!task.isSuccessful()) {
-                            Log.d("bharath","logged in error");
+                            Log.d("LoginActivity","logged in error");
 
-                                Toast.makeText(LoginActivity1.this, "Authentication Failed", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this, "Authentication Failed", Toast.LENGTH_LONG).show();
 
                         } else {
-                            Log.d("bharath","logged in");
-                            Intent intent = new Intent(LoginActivity1.this, UsersActivity.class);
+                            Log.d("LoginActivity","logged in");
+                            Intent intent = new Intent(LoginActivity.this, UsersActivity.class);
                             startActivity(intent);
                             finish();
                         }

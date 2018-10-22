@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,7 @@ public class AddEventActivity extends AppCompatActivity {
     private ImageView imageView;
     private RatingBar ratingBar;
     TextView rvalue;
+    TextView toolbar_title;
     private Button submit;
     private DatabaseReference mDatabase;
 // ...
@@ -51,6 +53,12 @@ public class AddEventActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activty_addevent);
+        toolbar_title = (TextView) findViewById(R.id.toolbar_text_view__title);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        //myToolbar.setTitle("ADD EVENT");
+
+
         submit= (Button) findViewById(R.id.submit);
         myCalendar = Calendar.getInstance();
         date= (EditText) findViewById(R.id.date);
@@ -155,8 +163,8 @@ public class AddEventActivity extends AppCompatActivity {
 
         //System.out.println(dtf.format(now));
         Event event = new Event(title1,desc,time1,date1,image);
-        Log.d("BHARATH111",""+event);
-        Log.d("BHARATH111",""+dtf.format(now).toString());
+        Log.d("AddEvent",""+event);
+        Log.d("AddEvent",""+dtf.format(now).toString());
         mDatabase.child("Events").child(dtf.format(now).toString()).setValue(event);
         Intent i = new Intent(AddEventActivity.this,UsersActivity.class);
         startActivity(i);
@@ -186,7 +194,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         if(resultCode == RESULT_OK) {
             Bitmap bitmap = getPath(data.getData());
-            Log.d("bharath  ","entered");
+            Log.d("AddEvent  ","entered");
             imageView.setImageBitmap(bitmap);
         }
     }

@@ -2,10 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#26ae90"
+    android:background="#000033"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -13,7 +24,7 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp" >
+        android:paddingRight="20dp">
 
         <EditText
             android:id="@+id/email"
@@ -21,8 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/cardview_light_background"
-            android:hint="Enter Email"
-            android:text="bharath.psc@gmail.com"
+            android:text="root@gmail.com"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
@@ -35,8 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/cardview_light_background"
-            android:hint="Enter Password"
-            android:text="bharath94"
+            android:text="root123"
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
@@ -50,9 +59,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="#eceef1"
+            android:background="#51d8c7"
             android:text="Login"
-            android:textColor="#26ae90" />
+            android:fontFamily=""
+            android:textStyle="normal"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <!-- Link to Login Screen -->
 
@@ -65,7 +78,7 @@
             android:text="Register Here!"
             android:textAllCaps="false"
             android:textColor="@color/cardview_light_background"
-            android:textSize="15dp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

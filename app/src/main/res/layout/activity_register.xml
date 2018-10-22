@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/nestedScrollView"
-    android:background="@color/colorPrimaryDark"
+    android:background="#000033"
     android:padding="20dp"
     tools:context=".activities.activities.LoginActivity">
 
@@ -94,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:textSize="28sp"
             android:textColor="#ffffff"
             android:background="#51d8c7"
             android:text="Register" />
