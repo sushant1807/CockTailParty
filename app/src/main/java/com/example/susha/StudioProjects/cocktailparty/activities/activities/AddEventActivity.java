@@ -53,9 +53,9 @@ public class AddEventActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activty_addevent);
-        toolbar_title = (TextView) findViewById(R.id.toolbar_text_view__title);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(myToolbar);
+        //toolbar_title = findViewById(R.id.toolbar_text_view__title);
+        //Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(myToolbar);
         //myToolbar.setTitle("ADD EVENT");
 
 

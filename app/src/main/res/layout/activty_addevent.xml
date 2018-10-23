@@ -8,27 +8,6 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/WhiteToolBar"
-        app:popupTheme="@style/Theme.AppCompat.NoActionBar"
-        app:titleTextColor="#FFFFFF">
-
-        <TextView
-            android:id="@+id/toolbar_text_view__title"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:text="ADD EVENT"
-            android:textColor="#FFFFFF" />
-
-    </android.support.v7.widget.Toolbar>
-
     <TextView
         android:id="@+id/tv1"
         android:layout_width="150dp"
